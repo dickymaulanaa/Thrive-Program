@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pure React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17.0.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.development.js"></script>
+    <script>
+
+        const heroes = [{
+            imgSrc: "https://upload.wikimedia.org/wikipedia/en/b/bd/Doraemon_character.png",
+            nama: "Doraemon",
+            age: 11,
+            city: "toyama"
+        },
+        {
+            imgSrc: "https://pbs.twimg.com/profile_images/493416454104969216/2gt_nClw_400x400.jpeg",
+            nama: "goku",
+            age: 33,
+            city: "racoon"
+        },
+        {
+            imgSrc: "https://pbs.twimg.com/media/DyXR3quXQAUBo81.jpg",
+            nama: "itaci",
+            age: 23,
+            city: "konoha"
+        }
+        ]
+        const App = () => {
+            return React.createElement("div", { className: "container" }, [
+                heroes.map((hero, i) => {
+                    return React.createElement("div", { className: "card", key: i }, [
+                        React.createElement("img", {
+                            className: "image",
+                            src: hero.imgSrc,
+                            key: i
+                        })
+                    ],
+                        React.createElement("h1", {}, hero.nama),
+                        React.createElement("h2", {}, hero.age),
+                        React.createElement("h2", {}, hero.city)
+                    )
+                })
+            ])
+        }
+        ReactDOM.render(React.createElement(App), document.getElementById("root"));
+    </script>
+</body>
+
+</html>
