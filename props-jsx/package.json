@@ -2,11 +2,13 @@
   "name": "props",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --dist-dir build",
+    "start": "serve build"
   },
+
   "author": "",
   "license": "ISC",
   "devDependencies": {
